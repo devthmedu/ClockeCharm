@@ -1,0 +1,841 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --primary-color: #244a2f;
+  --text-dark: #2d2b2c;
+  --text-light: #000000;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Personaliza a barra de rolagem para navegadores Webkit */
+::-webkit-scrollbar {
+  width: 12px; /* Largura da barra de rolagem */
+}
+
+::-webkit-scrollbar-track {
+  background: var(--white); /* Cor do trilho da barra de rolagem */
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color); /* Cor do polegar da barra de rolagem */
+  border-radius: 10px; /* Arredondamento do polegar da barra de rolagem */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1d3b28; /* Cor do polegar quando o usuário passa o mouse sobre ele */
+}
+/* Estilo para o ícone do carrinho de compras */
+.nav__cart {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative; /* Para posicionar o contador no canto superior direito */
+  margin-left: 20px; /* Espaço entre o ícone do carrinho e o logo */
+}
+
+.nav__cart i {
+  font-size: 24px;
+  color: #333; /* Cor do ícone */
+}
+
+/* Estilo para o contador de itens no carrinho */
+.cart-count {
+  position: absolute;
+  top: -8px; /* Ajusta a posição vertical do contador */
+  right: -8px; /* Ajusta a posição horizontal do contador */
+  background-color: red; /* Cor de fundo */
+  color: white; /* Cor do texto */
+  border-radius: 50%;
+  width: 22px; /* Largura do contador */
+  height: 22px; /* Altura do contador */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px; /* Tamanho da fonte */
+  font-weight: bold; /* Peso da fonte */
+}
+
+
+.section__header {
+  position: relative;
+  isolation: isolate;
+  padding-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+.section__header::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 4rem;
+  height: 2px;
+  background-color: var(--primary-color);
+}
+
+.btn {
+  max-width: fit-content;
+  padding: 1rem 2rem;
+  outline: none;
+  border: none;
+  font-size: 0.8rem;
+  font-weight: 00;
+  color: var(--white);
+  background-color: var(--primary-color);
+  transition: 0.3s;
+  cursor: pointer;
+  border-radius: 15px;
+  gap: 1rem;
+}
+
+.btn:hover {
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+}
+
+img {
+  display: flex;
+  width: 200%;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+ul {
+  list-style: none;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.header__container {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  display: grid;
+}
+
+nav {
+  position: fixed;
+  isolation: isolate;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+}
+
+.nav__header {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--text-dark);
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav__logo img {
+  max-width: 50px; /* Tamanho máximo da logo */
+  margin: 0 15px; /* Espaçamento horizontal entre logos (ajuste o valor conforme necessário) */
+}
+
+/* Estilo para o menu do carrinho */
+.cart-menu {
+  display: none; /* Esconde o menu por padrão */
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  overflow-y: auto;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%);
+}
+
+.cart-menu.active {
+  display: block;
+  transform: translateX(0);
+}
+
+.cart-menu__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.cart-menu__header h2 {
+  margin: 0;
+}
+
+.cart-menu__header .close-cart {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.cart-menu__items {
+  padding: 1rem;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Estilos para itens no carrinho */
+.cart-item img {
+  width: 50px;
+  height: 50px;
+  margin-right: 1rem;
+}
+
+.cart-item h4 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.cart-item p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.cart-item .remove-item {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Estilos para preços antigos */
+.price-original {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 0.9em;
+  margin-right: 5px;
+}
+
+/* Estilos gerais para os preços */
+.feature__card p, .arrival__card p {
+  font-size: 1em;
+  margin: 0;
+}
+
+/* Estilos para os cartões de produtos */
+.feature__card, .arrival__card {
+  position: relative;
+}
+
+/* Estilos para as etiquetas de liquidação */
+.feature__card span, .arrival__card span {
+  display: inline-block;
+  background: red;
+  color: white;
+  padding: 2px 5px;
+  font-weight: bold;
+  border-radius: 3px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+/* Estilos adicionais para a área de rodapé do menu do carrinho */
+.cart-menu__footer {
+  padding: 1rem;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+.cart-menu__footer h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.cart-menu__footer .checkout {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
+.logo-dark {
+  display: none;
+}
+
+.nav__menu__btn {
+  font-size: 1.5rem;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.nav__links {
+  position: absolute;
+  top: 65px;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: var(--text-dark);
+  transition: 0.5s;
+  z-index: -1;
+  transform: translateY(-100%);
+}
+
+.nav__links.open {
+  transform: translateY(0);
+}
+
+.nav__links a {
+  font-weight: 500;
+  color: var(--white);
+}
+
+.nav__links a:hover {
+  color: var(--primary-color);
+}
+
+.header__image {
+  background-color: var(--primary-color);
+  overflow: hidden;
+}
+.header__image img {
+  padding-block: 5rem;
+  max-width: 400px;
+  margin-inline: auto;
+}
+
+.header__content {
+  padding: 1rem;
+}
+
+.header__content h1 {
+  margin-bottom: 1rem;
+  font-size: 3.75rem;
+  font-weight: 600;
+  line-height: 4.25rem;
+  color: var(--text-dark);
+}
+
+.header__content p {
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+.header__content h4 {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.header__btns {
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+}
+
+.header__btns .discover {
+  background-color: var(--text-light);
+  border-radius: 15px;
+}
+
+.feature__grid {
+  margin-top: 4rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.feature__card {
+  position: relative;
+  isolation: isolate;
+  height: fit-content;
+  padding: 2rem 1rem;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.feature__card:hover {
+  box-shadow: 5px 5px 40px rgba(0, 0, 0, 0.2);
+}
+.feature__card span {
+  position: absolute;
+  left: 0;
+  transform: translateX(-100%) rotate(-90deg);
+  transform-origin: top right;
+  display: inline;
+  padding: 5px 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--white);
+  background-color: var(--primary-color);
+}
+
+.feature__card img {
+  width: fit-content;
+  height: 100%;
+  max-height: 250px;
+  margin-inline: auto;
+  margin-bottom: 1rem;
+}
+
+.feature__card h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.feature__card p {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.feature__card .btn {
+  display: none;
+}
+
+.feature__card:hover .btn {
+  display: inline-block;
+}
+
+.story {
+  overflow: hidden;
+}
+
+.story__container {
+  display: grid;
+  gap: 4rem;
+  text-align: center;
+}
+
+.story__image {
+  position: relative;
+  isolation: isolate;
+}
+
+.story__image::before {
+  position: absolute;
+  content: "";
+  top: 3rem;
+  right: 5rem;
+  height: 100%;
+  width: 100vw;
+  background-color: var(--primary-color);
+  z-index: -2;
+}
+
+.story__image::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000000;
+  z-index: -1;
+}
+
+.story__image img {
+  max-width: 450px;
+  margin-inline: auto;
+}
+
+.story__content h4 {
+  margin-block: 1rem;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 3.5rem;
+  color: var(--white);
+}
+
+.story__content p {
+  margin-bottom: 2rem;
+  color: var(--text-light);
+}
+
+.arrival__grid {
+  display: grid;
+  margin-top: 4rem;
+  gap: 1rem;
+}
+
+.arrival__card {
+  position: relative;
+  isolation: isolate;
+  height: fit-content;
+  padding: 2rem 1rem;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.arrival__card:hover {
+  background-color: var(--primary-color);
+  box-shadow: 5px 5px 40px rgba(0, 0, 0, 0.2);
+}
+
+.arrival__card span {
+  position: absolute;
+  padding: 5px 1rem;
+  top: 1rem;
+  right: 1rem;
+  padding: 5px 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--white);
+  background-color: var(--primary-color);
+}
+
+.arrival__card img {
+  width: fit-content;
+  height: 100%;
+  max-height: 160px;
+  margin-inline: auto;
+  margin-bottom: 1rem;
+}
+
+.arrival__card h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.arrival__card p {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.arrival__card .read__more {
+  margin-bottom: 1rem;
+  padding: calc(1rem - 4px) calc(2rem - 4px);
+  display: none;
+  background-color: transparent;
+  border: 2px solid var(--white);
+}
+
+.arrival__card:hover .read__more {
+  display: block;
+  margin-inline: auto;
+}
+
+.client {
+  overflow: hidden;
+}
+
+.client__container {
+  display: grid;
+  gap: 4rem;
+  padding: 2rem; /* Adiciona um pouco de padding ao container */
+}
+
+.client__image {
+  position: relative;
+  isolation: isolate;
+  display: flex; /* Centraliza a imagem horizontalmente */
+  justify-content: center; /* Alinha a imagem ao centro */
+}
+
+.client__image::before {
+  position: absolute;
+  content: "";
+  top: -5rem;
+  left: 0;
+  right: 0; /* Ajusta o posicionamento da cor de fundo */
+  height: 100%;
+  background-color: var(--primary-color);
+  z-index: -1;
+}
+
+.client__image img {
+  max-width: 80%; /* Ajusta o tamanho máximo da imagem */
+  height: auto; /* Mantém a proporção da imagem */
+  margin: 0 auto; /* Centraliza a imagem horizontalmente */
+}
+
+.client__content {
+  overflow: hidden;
+}
+
+.swiper {
+  width: 100%;
+}
+
+.client__card {
+  padding: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px; /* Adiciona bordas arredondadas aos cards */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona sombra suave */
+  background-color: var(--white); /* Define o fundo do card */
+}
+
+.client__card span {
+  display: inline-block;
+  margin-bottom: 2rem;
+  padding: 10px 15px;
+  font-size: 1.5rem; /* Ajusta o tamanho da fonte */
+  color: var(--primary-color);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ajusta a sombra */
+}
+
+.client__card p {
+  margin-bottom: 2rem;
+  font-size: 1rem; /* Ajusta o tamanho da fonte */
+  color: var(--text-light);
+}
+
+.client__card__details {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.client__card__details img {
+  width: 100px; /* Define a largura da imagem */
+  height: 100px; /* Define a altura da imagem */
+  max-width: 150px; /* Garante que a imagem não ultrapasse o tamanho definido */
+  border-radius: 50%; /* Faz com que a imagem fique circular */
+  object-fit: cover; /* Garante que a imagem preencha o espaço sem distorção */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+
+.client__card__details h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.client__card__details h5 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+.subscribe {
+  background-color: var(--primary-color);
+  padding: 2rem; /* Adiciona padding */
+}
+
+.subscribe__container {
+  display: grid;
+  gap: 2rem;
+}
+
+.subscribe__container div {
+  text-align: center;
+}
+
+.subscribe__container h2 {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 600; /* Corrige o peso da fonte */
+  color: var(--white);
+}
+
+.subscribe__container p {
+  color: var(--white);
+}
+
+.footer__container {
+  display: grid;
+  gap: 4rem 2rem;
+}
+
+.footer__col h4 {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.footer__links {
+  display: grid;
+  gap: 1rem;
+}
+
+.footer__links a {
+  color: var(--text-light);
+}
+
+.footer__links a:hover {
+  color: var(--primary-color);
+}
+
+.footer__bar {
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  text-align: center;
+}
+
+
+@media (width > 540px) {
+  .feature__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .arrival__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width > 768px) {
+  .header__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    position: relative;
+  }
+
+  nav {
+    padding: 2rem 1rem;
+    position: absolute;
+    width: calc(100vw / 2);
+    max-width: calc(var(--max-width) / 2);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .nav__header {
+    padding: 0;
+    width: unset;
+    background-color: transparent;
+  }
+
+  .nav__logo img {
+    max-width: 75px;
+  }
+
+  .logo-white {
+    display: none;
+  }
+
+  .logo-dark {
+    display: flex;
+  }
+
+  .nav__menu__btn {
+    display: none;
+  }
+
+  .nav__links {
+    position: static;
+    padding: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 2rem;
+    background-color: transparent;
+    transform: none;
+  }
+
+  .nav__links a {
+    color: var(--text-dark);
+  }
+
+  .header__image {
+    grid-area: 1/2/2/3;
+  }
+
+  .feature__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .story__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    text-align: left;
+  }
+
+  .story__content .section__header {
+    text-align: left;
+    max-width: fit-content;
+  }
+
+  .arrival__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .client__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
+  .client__image {
+    grid-area: 1/2/2/3;
+  }
+
+  .subscribe__container {
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+  }
+
+  .subscribe__container div:nth-child(1) {
+    text-align: left;
+  }
+
+  .subscribe__container div:nth-child(2) {
+    text-align: right;
+  }
+
+  .footer__container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (width > 1024px) {
+  .feature__grid {
+    gap: 2rem;
+  }
+}
+
