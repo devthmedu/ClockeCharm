@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+          rel="stylesheet" />
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet"
+          href="./src/styles.css" />
+          <link rel="shortcut icon" href="./src/img/logo branco.png" type="image/x-icon">
+    <title>Clock & Charm</title>
+  </head>
+
+  <body>
+    <header class="header__container"
+            id="home">
+      <nav>
+        <div class="nav__header">
+          <div class="nav__logo">
+            <a href="#">
+              <img src="./src/img/logo.png"
+                   alt="logo escura"
+                   class="logo-dark" />
+              <img src="./src/img/logo branco.png"
+                   alt="logo branca"
+                   class="logo-white" />
+            </a>
+          </div>
+          <div class="nav__menu__btn"
+               id="menu-btn">
+            <i class="ri-menu-line"></i>
+          </div>
+          <div class="nav__cart"
+               id="cart-btn">
+            <i class="ri-shopping-cart-line"></i>
+            <span class="cart-count">0</span>
+          </div>
+        </div>
+        <ul class="nav__links"
+            id="nav-links">
+          <li><a href="#home">Início</a></li>
+          <li><a href="#product">Produto</a></li>
+          <li><a href="#store">Loja</a></li>
+        </ul>
+      </nav>
+<!-- Menu do Carrinho -->
+<div class="cart-menu"
+     id="cart-menu">
+  <div class="cart-menu__header">
+    <h2>Seu Carrinho</h2>
+    <button class="btn close-cart"
+            id="close-cart">&times;</button>
+  </div>
+<div class="cart-menu__items"
+     id="cart-items">
+  <!-- Itens do carrinho serão adicionados aqui -->
+</div>
+<div class="cart-menu__footer">
+  <h3>Total: <span id="cart-total">R$0</span></h3>
+  <button class="btn checkout">Finalizar Compra</button>
+</div>
+
+</div>
+      <div class="header__image">
+        <img src="./src/img/home.png"
+             alt="imagem de cabeçalho" />
+      </div>
+      <div class="header__content">
+        <h1>Nova Coleção de Relógios 2024</h1>
+        <p>
+          Descubra a mistura perfeita de inovação, artesanato e elegância enquanto navega por nossa coleção meticulosamente selecionada.
+        </p>
+        <h4>R$1245</h4>
+        <div class="header__btns">
+          <button class="btn discover">Descubra Agora</button>
+          <button class="btn">Adicionar ao Carrinho</button>
+        </div>
+      </div>
+    </header>
+
+  <!-- Seções dos produtos -->
+  <section class="section__container feature__container"
+           id="product">
+    <h2 class="section__header">Apresentamos nossa nova linha</h2>
+    <div class="feature__grid">
+      <div class="feature__card">
+        <span>NOVIDADES</span>
+        <img src="./src/img/relogios/Smartwatch_Amazfit_Bip_U_Pro-removebg-preview.png"
+             alt="Smartwatch Amazfit Bip U Pro" />
+        <h4>Smartwatch Amazfit Bip U Pro</h4>
+        <p><span class="price-original">R$699</span><br>R$599</p>
+        <button class="btn add-to-cart"
+                data-id="1"
+                data-name="Smartwatch Amazfit Bip U Pro"
+                data-price="599"
+                data-img="./src/img/relogios/Smartwatch_Amazfit_Bip_U_Pro-removebg-preview.png">Adicionar ao Carrinho</button>
+      </div>
+      <div class="feature__card">
+        <span>NOVIDADES</span>
+        <img src="./src/img/relogios/Apple_Watch_Ultra_2_GPS_+_Cellular___Caixa_de_titânio___49_mm___Pulseira_Oceano_laranja-removebg-preview.png"
+             alt="Apple Watch Ultra 2 GPS" />
+        <h4>Apple Watch Ultra 2 GPS</h4>
+        <p><span class="price-original">R$1.099</span><br>R$950</p>
+        <button class="btn add-to-cart"
+                data-id="2"
+                data-name="Apple Watch Ultra 2 GPS"
+                data-price="950"
+                data-img="./src/img/relogios/Apple_Watch_Ultra_2_GPS_+_Cellular___Caixa_de_titânio___49_mm___Pulseira_Oceano_laranja-removebg-preview.png">Adicionar ao Carrinho</button>
+      </div>
+      <div class="feature__card">
+        <span>NOVIDADES</span>
+        <img src="./src/img/relogios/Relógio_Smartwatch_Amazfit_GTS_2_Mini__GPS__Bluetooth__Compatível_com_Android_e_iOS-removebg-preview.png"
+             alt="Relógio Smartwatch Amazfit GTS 2 Mini" />
+        <h4>Smartwatch Amazfit GTS 2 Mini</h4>
+        <p><span class="price-original">R$789,00</span><br>R$709,00</p>
+        <button class="btn add-to-cart"
+                data-id="3"
+                data-name="Smartwatch Amazfit GTS 2 Mini"
+                data-price="709"
+                data-img="./src/img/relogios/Relógio_Smartwatch_Amazfit_GTS_2_Mini__GPS__Bluetooth__Compatível_com_Android_e_iOS-removebg-preview.png">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section__container feature__container"
+           id="product">
+    <h2 class="section__header">Destaques</h2>
+    <div class="feature__grid">
+      <div class="feature__card">
+        <span>NOVIDADES</span>
+        <img src="./src/img/relogios/Samsung_Galaxy_Watch4_BT_40mm_-_Relógio_inteligente__Preto-removebg-preview.png"
+             alt="Samsung Galaxy Watch4 BT 40mm" />
+        <h4>Samsung Galaxy Watch4 BT 40mm</h4>
+        <p><span class="price-original">R$850</span><br>R$780</p>
+        <button class="btn add-to-cart"
+                data-id="4"
+                data-name="Samsung Galaxy Watch4 BT 40mm"
+                data-price="780"
+                data-img="./src/img/relogios/Samsung_Galaxy_Watch4_BT_40mm_-_Relógio_inteligente__Preto-removebg-preview.png">Adicionar ao Carrinho</button>
+      </div>
+      <div class="feature__card">
+        <span>NOVIDADES</span>
+        <img src="./src/img/relogios/Smartwatch_Relógio-removebg-preview.png"
+             alt="Smartwatch My Watch I Fit Haiz" />
+        <h4>Smartwatch My Watch I Fit Haiz</h4>
+        <p><span class="price-original">R$1.100</span><br>R$950</p>
+        <button class="btn add-to-cart"
+                data-id="5"
+                data-name="Smartwatch My Watch I Fit Haiz"
+                data-price="950"
+                data-img="./src/img/relogios/Smartwatch_Relógio-removebg-preview.png">Adicionar ao Carrinho</button>
+      </div>
+      <div class="feature__card">
+        <span>NOVIDADES</span>
+        <img src="./src/img/relogios/Samsung_Galaxy_Watch7_Smartwatch-removebg-preview.png"
+             alt="Samsung Galaxy Watch7 Smartwatch" />
+        <h4>Samsung Galaxy Watch7 44mm</h4>
+        <p><span class="price-original">R$2.799</span><br>R$2.396,32</p>
+        <button class="btn add-to-cart"
+                data-id="6"
+                data-name="Samsung Galaxy Watch7 44mm"
+                data-price="2396.32"
+                data-img="./src/img/relogios/Samsung_Galaxy_Watch7_Smartwatch-removebg-preview.png">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+  </section>
+  
+  <section class="story">
+    <div class="section__container story__container">
+      <div class="story__image">
+        <img src="./src/img/story__image2.png"
+             alt="nossa história" />
+      </div>
+      <div class="story__content">
+        <h2 class="section__header">NOSSA HISTÓRIA</h2>
+        <h4>Relógio Inspirador do Ano</h4>
+        <p>Cada peça desta coleção representa o auge da arte relojoeira, combinando design inovador com funcionalidade incomparável.</p>
+        <div class="story__btn">
+          <button class="btn">DESCUBRA</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section__container arrival__container"
+           id="store">
+    <h2 class="section__header">PROMOÇÃO</h2>
+    <div class="arrival__grid">
+      <div class="arrival__card">
+        <img src="./src/img/relogios/Relógio_Masculino_Casio_Prata_Com_Data_Fundo_Preto_Original-removebg-preview.png"
+             alt="Relógio Masculino Casio" />
+        <h4>Relógio Masculino Casio Prata Com Data Fundo Preto Original</h4>
+        <p><span class="price-original">R$450</span><br>R$390</p>
+        <button class="btn read__more">Saiba Mais</button>
+        <button class="btn add-to-cart"
+                data-id="7"
+                data-name="Relógio Masculino Casio Prata Com Data Fundo Preto Original"
+                data-price="390"
+                data-img="./src/img/relogios/Relógio_Masculino_Casio_Prata_Com_Data_Fundo_Preto_Original-removebg-preview.png">Adicionar ao Carrinho</button>
+      </div>
+      <div class="arrival__card">
+        <span>LIQUIDAÇÃO</span>
+        <img src="./src/img/relogios/Relógio_Nibosi_Masculino_2309_Preto_Aço_Inoxidável_Cronógrafo_Ponteiros_Pequenos_Funcionais_Estojo_Original_Garantia-removebg-preview.png"
+             alt="Relógio Nibosi Masculino" />
+        <h4>Relógio Nibosi Masculino 2309 Preto Aço</h4>
+        <p><span class="price-original">R$250</span><br>R$183</p>
+        <button class="btn read__more">Saiba Mais</button>
+        <button class="btn add-to-cart"
+                data-id="8"
+                data-name="Relógio Nibosi Masculino 2309 Preto Aço"
+                data-price="183"
+                data-img="./src/img/relogios/Relógio_Nibosi_Masculino_2309_Preto_Aço_Inoxidável_Cronógrafo_Ponteiros_Pequenos_Funcionais_Estojo_Original_Garantia-removebg-preview.png">Adicionar ao Carrinho</button>
+      </div>
+      <div class="arrival__card">
+        <img src="./src/img/relogios/Relógio_Masculino_Analógico-removebg-preview.png"
+             alt="Relógio Masculino Analógico" />
+        <h4>Relógio Masculino Analógico</h4>
+        <p><span class="price-original">R$800</span><br>R$678</p>
+        <button class="btn read__more">Saiba Mais</button>
+        <button class="btn add-to-cart"
+                data-id="9"
+                data-name="Relógio Masculino Analógico"
+                data-price="678"
+                data-img="./src/img/relogios/Relógio_Masculino_Analógico-removebg-preview.png">Adicionar ao Carrinho</button>
+      </div>
+      <div class="arrival__card">
+        <span>LIQUIDAÇÃO</span>
+        <img src="./src/img/relogios/Relógio_Casio_Masculino_MTP-VD01GL-1EV-removebg-preview.png"
+             alt="Relógio Casio Masculino" />
+        <h4>Relógio Casio Masculino MTP-VD01GL-1EV</h4>
+        <p><span class="price-original">R$700</span><br>R$570</p>
+        <button class="btn read__more">Saiba Mais</button>
+        <button class="btn add-to-cart"
+                data-id="10"
+                data-name="Relógio Casio Masculino MTP-VD01GL-1EV"
+                data-price="570"
+                data-img="./src/img/relogios/Relógio_Casio_Masculino_MTP-VD01GL-1EV-removebg-preview.png">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="client">
+    <div class="section__container client__container">
+      <div class="client__image">
+        <img src="./src/img/avaliacao/ava.jpg"
+             alt="cliente satisfeito" />
+      </div>
+      <div class="client__content">
+        <!-- Slider principal -->
+        <div class="swiper">
+          <!-- Requer wrapper adicional -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <div class="client__card">
+                <span><i class="ri-double-quotes-l"></i></span>
+                <p>
+                  Nunca esperei encontrar uma gama tão extensa de relógios para diferentes gostos e preferências. Foi desafiador escolher apenas um! O atendimento foi impecável, tornando minha experiência de compra verdadeiramente agradável. Com certeza voltarei para mais.
+                </p>
+                <div class="client__card__details">
+                  <img src="./src/img/avaliacao/client.jpg"
+                       alt="Michael Chen" />
+                  <div>
+                    <h4>Michael Chen</h4>
+                    <h5>Analista Financeiro</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="client__card">
+                <span><i class="ri-double-quotes-l"></i></span>
+                <p>
+                  Como colecionador ávido de relógios, já explorei inúmeros sites, mas nenhum se compara ao calibre deste. A seleção é inigualável e a atenção aos detalhes é evidente em cada peça. O atendimento ao cliente foi rápido e conhecedor, garantindo uma experiência sem falhas.
+                </p>
+                <div class="client__card__details">
+                  <img src="assets/client-2.jpg"
+                       alt="Sarah Johnson" />
+                  <div>
+                    <h4>Sarah Johnson</h4>
+                    <h5>Executiva de Marketing</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="client__card">
+                <span><i class="ri-double-quotes-l"></i></span>
+                <p>
+                  Da elegância casual ao luxo sofisticado, este site tem tudo. Sou cliente fiel há anos, e a consistência em oferecer serviços e produtos excepcionais nunca deixa de me surpreender. Seja para uma ocasião especial ou um mimo pessoal, confio neste site para entregar.
+                </p>
+                <div class="client__card__details">
+                  <img src="assets/client-3.jpg"
+                       alt="David Lee" />
+                  <div>
+                    <h4>David Lee</h4>
+                    <h5>Empresário</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="subscribe">
+    <div class="section__container subscribe__container">
+      <div>
+        <h2>Assine Nosso Boletim</h2>
+        <p>
+          Seja o primeiro a saber sobre nossas novidades, ofertas exclusivas e atualizações ao se inscrever em nosso boletim.
+        </p>
+      </div>
+      <div>
+        <button class="btn">ASSINAR</button>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="footer">
+    <div class="section__container footer__container">
+      <div class="footer__col">
+        <h4>Nossas Informações</h4>
+        <ul class="footer__links">
+          <li><a href="#">Política de Devolução</a></li>
+          <li><a href="#">Política de Privacidade</a></li>
+          <li><a href="#">Termos e Condições</a></li>
+          <li><a href="#">Mapa do Site</a></li>
+          <li><a href="#">Armazém</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Sobre Nós</h4>
+        <ul class="footer__links">
+          <li><a href="#">Central de Suporte</a></li>
+          <li><a href="#">Atendimento ao Cliente</a></li>
+          <li><a href="#">Sobre a Empresa</a></li>
+          <li><a href="#">Copyright</a></li>
+          <li><a href="#">Campanhas Populares</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Produtos</h4>
+        <ul class="footer__links">
+          <li><a href="#">Relógios Esportivos</a></li>
+          <li><a href="#">Relógios Cornográficos</a></li>
+          <li><a href="#">Relógios Digitais</a></li>
+          <li><a href="#">Relógios Mecânicos</a></li>
+          <li><a href="#">Acessórios</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Suporte</h4>
+        <ul class="footer__links">
+          <li><a href="#">Ajuda com Produtos</a></li>
+          <li><a href="#">Serviço e Garantia</a></li>
+          <li><a href="#">Ajustes</a></li>
+          <li><a href="#">Serviço Autorizado</a></li>
+          <li><a href="#">Atendimento ao Cliente</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      Copyright © 2024 Web Addicted. Todos os direitos reservados de Thomas Eduardo.
+    </div>
+  </footer>
+  
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="./src/script.js"></script>
+  <script src="./src/carrinho.js"></script>
+  <script src="./src/produtos.js"></script>
+
+  </body>
+  
+  </html>
