@@ -1,5 +1,9 @@
 # ⏰ ClockCharm
 
+
+![clockcharm](https://github.com/user-attachments/assets/96050efa-0258-4b5c-b1fd-f5d755b426cf)
+
+
 ClockCharm é uma aplicação web desenvolvida para fornecer uma experiência agradável e funcional ao gerenciar o tempo e criar lembretes personalizados. Com uma interface amigável e intuitiva, a aplicação permite que os usuários configurem alarmes, timers, e lembretes de maneira prática e eficiente.
 
 ## 🎯 Objetivos
