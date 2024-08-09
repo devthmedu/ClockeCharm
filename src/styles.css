@@ -169,7 +169,7 @@ nav {
   top: 0;
   right: 0;
   width: 300px;
-  height: 50%;
+  height: 100%;
   background-color: #fff;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
   z-index: 1000;
@@ -742,23 +742,6 @@ nav {
   z-index: -1;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .subscribe__container {
-    grid-template-columns: 1fr; /* Alinha o conteúdo em uma única coluna */
-  }
-
-  .subscribe__content p {
-    font-size: 1rem; /* Ajusta o tamanho da fonte do parágrafo em telas menores */
-    padding: 0 1rem; /* Adiciona padding lateral para melhor visualização em telas pequenas */
-  }
-
-  .subscribe__image img {
-    max-width: 100%; /* Ajusta a largura máxima da imagem para ocupar todo o espaço disponível */
-  }
-}
-
-
 .footer__container {
   display: grid;
   gap: 4rem 2rem;
@@ -805,41 +788,42 @@ nav {
   background-color: var(--footer-bar-background, #244a2f); /* Define uma cor de fundo para a barra do rodapé */
 }
 
-/* Responsividade para telas pequenas */
+/* Responsividade */
 @media (max-width: 768px) {
   .footer__container {
-    grid-template-columns: 1fr; /* Organiza as colunas em uma única coluna */
-    padding: 1rem; /* Ajusta o padding para um espaço mais compacto */
+    grid-template-columns: 1fr; /* Alinha as colunas em uma única coluna em telas menores */
   }
 
   .footer__links {
-    flex-direction: column; /* Organiza os links em uma coluna para melhor visualização em telas pequenas */
-    gap: 0.5rem; /* Ajusta o espaço entre os links */
+    flex-direction: row; /* Organiza os links em uma linha */
+    flex-wrap: wrap; /* Permite que os links quebrem a linha se necessário */
+    gap: 1rem; /* Ajusta o espaço entre os links */
   }
 
   .footer__bar {
-    font-size: 0.9rem; /* Ajusta o tamanho da fonte */
-    padding: 0.75rem; /* Ajusta o padding */
-  }
-
-  /* Outras seções */
-  .feature__grid, .arrival__grid, .story__container, .client__container, .subscribe__container {
-    grid-template-columns: 1fr; /* Organiza todas as seções em uma única coluna */
+    font-size: 0.9rem; /* Ajusta o tamanho da fonte da barra para telas menores */
+    padding: 1rem; /* Ajusta o padding da barra para telas menores */
   }
 }
 
-/* Responsividade para telas médias */
-@media (min-width: 769px) and (max-width: 1024px) {
+
+@media (width > 540px) {
+  .feature__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .arrival__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .footer__container {
-    grid-template-columns: repeat(2, 1fr); /* Duas colunas para telas médias */
+    grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  .feature__grid, .arrival__grid {
-    grid-template-columns: repeat(2, 1fr); /* Duas colunas */
-  }
-
+@media (width > 768px) {
   .header__container {
-    grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
     position: relative;
   }
@@ -852,6 +836,12 @@ nav {
     display: flex;
     align-items: center;
     gap: 2rem;
+  }
+
+  .nav__header {
+    padding: 0;
+    width: unset;
+    background-color: transparent;
   }
 
   .nav__logo img {
@@ -877,6 +867,7 @@ nav {
     justify-content: flex-start;
     gap: 2rem;
     background-color: transparent;
+    transform: none;
   }
 
   .nav__links a {
@@ -884,7 +875,11 @@ nav {
   }
 
   .header__image {
-    grid-area: 1 / 2 / 2 / 3;
+    grid-area: 1/2/2/3;
+  }
+
+  .feature__grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .story__container {
@@ -898,9 +893,17 @@ nav {
     max-width: fit-content;
   }
 
+  .arrival__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   .client__container {
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
+  }
+
+  .client__image {
+    grid-area: 1/2/2/3;
   }
 
   .subscribe__container {
@@ -915,29 +918,127 @@ nav {
   .subscribe__container div:nth-child(2) {
     text-align: right;
   }
+
+  .footer__container {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
-/* Responsividade para telas grandes */
-@media (min-width: 1025px) {
-  .footer__container {
-    grid-template-columns: repeat(4, 1fr); /* Quatro colunas para telas grandes */
+@media (width > 1024px) {
+  .feature__grid {
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 540px) {
+  .feature__grid, .arrival__grid, .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .header__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  nav {
+    padding: 2rem 1rem;
+    position: absolute;
+    width: calc(100vw / 2);
+    max-width: calc(var(--max-width) / 2);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .nav__header {
+    padding: 0;
+    width: unset;
+    background-color: transparent;
+  }
+
+  .nav__logo img {
+    max-width: 75px;
+  }
+
+  .logo-white {
+    display: none;
+  }
+
+  .logo-dark {
+    display: flex;
+  }
+
+  .nav__menu__btn {
+    display: none;
+  }
+
+  .nav__links {
+    position: static;
+    padding: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 2rem;
+    background-color: transparent;
+    transform: none;
+  }
+
+  .nav__links a {
+    color: var(--text-dark);
+  }
+
+  .header__image {
+    grid-area: 1/2/2/3;
   }
 
   .feature__grid {
-    grid-template-columns: repeat(3, 1fr); /* Três colunas */
-    gap: 2rem; /* Espaço aumentado entre os itens */
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .story__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    text-align: left;
+  }
+
+  .story__content .section__header {
+    text-align: left;
+    max-width: fit-content;
   }
 
   .arrival__grid {
-    grid-template-columns: repeat(4, 1fr); /* Quatro colunas */
+    grid-template-columns: repeat(4, 1fr);
   }
 
   .client__container {
-    grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
+  .client__image {
+    grid-area: 1/2/2/3;
   }
 
   .subscribe__container {
     grid-template-columns: 2fr 1fr;
     align-items: center;
+  }
+
+  .subscribe__container div:nth-child(1) {
+    text-align: left;
+  }
+
+  .subscribe__container div:nth-child(2) {
+    text-align: right;
+  }
+
+  .footer__container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .feature__grid {
+    gap: 2rem;
   }
 }
