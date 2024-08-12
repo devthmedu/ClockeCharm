@@ -3,7 +3,7 @@
 
 ![clockcharm](https://github.com/user-attachments/assets/96050efa-0258-4b5c-b1fd-f5d755b426cf)
 
-ClockCharm is a web application designed to provide a pleasant and functional experience for managing time and creating personalized reminders. With a user-friendly and intuitive interface, the application allows users to set alarms, timers, and reminders in a practical and efficient manner.
+Clock&Charm is a web application designed to provide a pleasant and functional experience for managing time and creating personalized reminders. With a user-friendly and intuitive interface, the application allows users to set alarms, timers, and reminders in a practical and efficient manner.
 
 ## 🎯 Objectives
 
