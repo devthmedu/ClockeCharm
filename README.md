@@ -1,68 +1,68 @@
 
-# ⏰ ClockCharm
+![Clock Charm](https://github.com/user-attachments/assets/552d163b-0063-4023-abbf-e3a2ec031eca)
 
-![clockcharm](https://github.com/user-attachments/assets/96050efa-0258-4b5c-b1fd-f5d755b426cf)
+# Clock&Charm
 
-Clock&Charm is a web application designed to provide a pleasant and functional experience for managing time and creating personalized reminders. With a user-friendly and intuitive interface, the application allows users to set alarms, timers, and reminders in a practical and efficient manner.
+Clock&Charm é uma aplicação web projetada para oferecer uma experiência agradável e funcional no gerenciamento de tempo e criação de lembretes personalizados. Com uma interface amigável e intuitiva, a aplicação permite que os usuários configurem alarmes, temporizadores e lembretes de maneira prática e eficiente.
 
-## 🎯 Objectives
+## 🎯 Objetivos
 
-- **Time Management**: Help users monitor time with clock, alarm, and timer functionalities.
-- **Personalized Reminders**: Enable the creation of customized reminders to organize daily tasks and appointments.
-- **Intuitive Interface**: Offer a simple and easy-to-use interface, accessible to all types of users.
-- **Responsiveness**: Ensure the application works seamlessly across different devices, including desktops, tablets, and smartphones.
+- **Gerenciamento de Tempo**: Auxiliar os usuários a monitorar o tempo com funcionalidades de relógio, alarme e temporizador.
+- **Lembretes Personalizados**: Permitir a criação de lembretes personalizados para organizar tarefas e compromissos diários.
+- **Interface Intuitiva**: Oferecer uma interface simples e fácil de usar, acessível a todos os tipos de usuários.
+- **Responsividade**: Garantir que a aplicação funcione perfeitamente em diferentes dispositivos, incluindo desktops, tablets e smartphones.
 
-## ✨ Features
+## ✨ Funcionalidades
 
-- **Digital Clock**: Display the current time in a digital format.
-- **Custom Alarms**: Set alarms with the option to choose sounds and define messages.
-- **Timer**: Countdown tool useful for tasks that need to be timed.
-- **Reminders**: Create reminders with notifications to organize daily tasks.
-- **Night Mode**: Adjustable interface for low-light environments.
-- **Calendar Synchronization**: Integration with calendar for easy reminder creation from events.
+- **Relógio Digital**: Exibir a hora atual em formato digital.
+- **Alarmes Personalizados**: Configurar alarmes com a opção de escolher sons e definir mensagens.
+- **Temporizador**: Ferramenta de contagem regressiva útil para tarefas que precisam ser temporizadas.
+- **Lembretes**: Criar lembretes com notificações para organizar tarefas diárias.
+- **Modo Noturno**: Interface ajustável para ambientes com pouca luz.
+- **Sincronização com Calendário**: Integração com o calendário para fácil criação de lembretes a partir de eventos.
 
-## 🛠️ Technologies Used
+## 🛠️ Tecnologias Utilizadas
 
-- **React**: JavaScript library for building the user interface.
-- **Next.js**: React framework for server-side rendering and static site generation.
-- **Styled-Components**: Used for styling components with theme support.
-- **Vercel**: Hosting platform used for deploying the application.
-- **React-Icons**: Icon library for React.
-- **date-fns**: Library for date manipulation and formatting.
-- **Redux**: For managing the global state of the application.
+- **React**: Biblioteca JavaScript para construção da interface do usuário.
+- **Next.js**: Framework React para renderização no lado do servidor e geração de sites estáticos.
+- **Styled-Components**: Utilizado para estilização de componentes com suporte a temas.
+- **Vercel**: Plataforma de hospedagem utilizada para a implantação da aplicação.
+- **React-Icons**: Biblioteca de ícones para React.
+- **date-fns**: Biblioteca para manipulação e formatação de datas.
+- **Redux**: Para gerenciamento do estado global da aplicação.
 
-## 🚀 Installation
+## 🚀 Instalação
 
-1. Clone this repository:
+1. Clone este repositório:
 
    ```bash
-   git clone https://github.com/your-username/clockcharm.git
+   git clone https://github.com/seu-usuario/clockcharm.git
    ```
 
-2. Navigate to the project directory:
+2. Navegue até o diretório do projeto:
 
    ```bash
    cd clockcharm
    ```
 
-3. Install the dependencies:
+3. Instale as dependências:
 
    ```bash
    npm install
    ```
 
-4. Run the application locally:
+4. Execute a aplicação localmente:
 
    ```bash
    npm run dev
    ```
 
-5. Access the application at [http://localhost:3000](http://localhost:3000).
+5. Acesse a aplicação em [http://localhost:3000](http://localhost:3000).
 
-## 🤝 Contribution
+## 🤝 Contribuição
 
-1. Fork the project.
-2. Create a branch for your feature (`git checkout -b feature/new-feature`).
-3. Commit your changes (`git commit -am 'Add new feature'`).
-4. Push to the branch (`git push origin feature/new-feature`).
-5. Create a new Pull Request.
+1. Faça um fork do projeto.
+2. Crie uma branch para sua funcionalidade (`git checkout -b feature/nova-funcionalidade`).
+3. Commit suas alterações (`git commit -am 'Adicionar nova funcionalidade'`).
+4. Envie para a branch (`git push origin feature/nova-funcionalidade`).
+5. Crie um novo Pull Request.
